@@ -16,7 +16,6 @@ client.on('message', message => {
           Commands. 
 ${prefix}1bc - برودكاست للجميع
 ${prefix}2bc - برودكاست بريئاكشن 
-${prefix}3bc - برودكاست للاون لاين 
 ${prefix}bcrole - برودكاست لرتبة معينة 
 **`)
     message.author.send(embed)
@@ -137,19 +136,6 @@ client.on('message' , message => {
 });
 
 
-client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "3bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
- m.send(`${argresult}\n ${m}`);
-})
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
- message.delete(); 
-};     
-});
 
 
 client.on('message', function(message) {
